@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>:^)</title>
+	<link rel="stylesheet" href="https://use.typekit.net/hou5gfo.css">
+	<link rel="stylesheet" href="lunger.css">
+	<link rel="icon"
+				type="image/jpg"
+				href="https://i.imgur.com/h7mgmaB.png">
+
+</head>
+<body>
+	<div class="container">
+
+  <!-- I'm referring to my sets of animations for now as set "menu_icon" and set "menu_icon2" -->
+
+    	<div id="menu_icon"></div>
+
+    </div>
+
+  <!-- In this next line I'm importing the Lottie script so that it can actually play my animation -->
+
+  <script src="lottie.js"></script>
+
+  	<script>
+
+  // Loading 'menu_icon' animations using variable 'animation1'
+
+  		var animation1 = bodymovin.loadAnimation({
+  				container: document.getElementById('menu_icon'),
+  				renderer: 'svg',
+  				loop: false,
+  				autoplay: false,
+  				path: 'girlgirl.json'
+  		});
+
+  		animation1.setSpeed(2);
+
+  	var bol = false;
+
+    // Keypress value reference sheet: https://www.w3.org/2002/09/tests/keys.html
+		window.onload = function(e) {
+			document.addEventListener("keypress", function(event) {
+			if (event.keyCode == 119) { // w
+				if (bol==false){
+					animation2.playSegments([0,25],true);
+					animation2.play();
+					changeBGC1();
+					$("#secrettext").addClass("show");
+				}
+			}
+    });
+  };
+
+
+  </script>
+
+</body>
+</html>

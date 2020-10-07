@@ -1,0 +1,24 @@
+body {
+  background: #e1e9f2;
+  color: #140505;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 3em;
+  letter-spacing: -2px;
+  line-height: 0.80;
+  transition-duration: 0.5s;
+}
+
+h1 {
+  font-family: "nimbus-sans", sans-serif;
+}
+
+#menu_icon{
+  mix-blend-mode: darken;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  width: 99%;
+  height: 99%;
+  filter: blur(0px);
+}
