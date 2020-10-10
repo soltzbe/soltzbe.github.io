@@ -1,0 +1,19 @@
+body {
+  background: #e1e9f2;
+  color: #140505;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 3em;
+  letter-spacing: -2px;
+  line-height: 0.80;
+  transition-duration: 0.5s;
+}
+
+h1 {
+  font-family: "nimbus-sans", sans-serif;
+}
+
+#abc {
+    min-height: 300px;
+    text-align: center;
+    font-size: 50px;
+}
