@@ -1,0 +1,101 @@
+body {
+  background: #000000;
+  color: #cddadd;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 4em;
+  letter-spacing: -4px;
+  line-height: 0.80;
+  text-align: justify;
+}
+
+h1 {
+  font-family: "nimbus-sans", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1000px;
+}
+
+.ascii {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1000px;
+  font-size: 1em;
+}
+
+.ascii-art {
+    font-family: source-code-pro,monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: .3em;
+    letter-spacing: -4px;
+    line-height: 0.80;
+    white-space: pre;
+    margin: 0 auto;
+}
+
+span0:before{
+  content: '';
+  animation: animate infinite 1s;
+}
+@keyframes animate{
+  0%{
+    content: 'OLIVIA';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'OLIVIA';
+  }
+}
+
+span1:before{
+  content: '';
+  animation: animate1 infinite 2s;
+}
+@keyframes animate1{
+  0%{
+    content: '4AM';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: '4AM';
+  }
+}
+
+span2:before{
+  content: '';
+  animation: animate2 infinite 3s;
+}
+@keyframes animate2{
+  0%{
+    content: 'THINK';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'THINK';
+  }
+}
+
+span3:before{
+  content: '';
+  animation: animate3 infinite 4s;
+}
+@keyframes animate3{
+  0%{
+    content: 'WINDOW';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'WINDOW';
+  }
+}
