@@ -1,0 +1,411 @@
+body {
+  background: #000000;
+  color: #cddadd;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 5em;
+  letter-spacing: -4px;
+  line-height: 0.80;
+  text-align: justify;
+}
+
+h1 {
+  font-family: "nimbus-sans", sans-serif;
+}
+
+.container0 {
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 50px;
+  max-width: 1000px;
+  text-align: center;
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  }
+
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+
+.container3 {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1000px;
+}
+
+.container2 {
+   text-align: center;
+ }
+
+.container2 pre {
+  display: inline-block;
+  font-size: 1.4vw;
+  text-align: justify;
+ }
+
+.ascii0 {
+  text-align: justify;
+  font-size: 1vw;
+}
+
+.ascii3 {
+  text-align: center;
+}
+
+.ascii3 pre {
+  display: inline-block;
+  text-align: justify;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 5vw;
+  letter-spacing: -4px;
+  line-height: 0.80;
+}
+
+.ascii1 {
+  text-align: center;
+}
+
+.ascii1 pre {
+  display: inline-block;
+  font-size: 3vw;
+  text-align: justify;
+}
+
+.ascii2 {
+  text-align: center;
+  font-size: 1vw;
+}
+
+.ascii {
+  text-align: center;
+  font-size: 5vw;
+  word-wrap: break-word;
+}
+
+.ascii-art {
+    font-family: source-code-pro,monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: .3em;
+    letter-spacing: -4px;
+    line-height: 0.80;
+    white-space: pre;
+    margin: 0 auto;
+}
+
+span0:before{
+  content: '';
+  animation: animate infinite 1s;
+}
+@keyframes animate{
+  0%{
+    content: 'Olivia';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'Olivia';
+  }
+}
+
+span1:before{
+  content: '';
+  animation: animate1 infinite 2s;
+}
+@keyframes animate1{
+  0%{
+    content: '4AM';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: '4AM';
+  }
+}
+
+span2:before{
+  content: '';
+  animation: animate2 infinite 3s;
+}
+@keyframes animate2{
+  0%{
+    content: 'think';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'think';
+  }
+}
+
+span8:before{
+  content: '';
+  animation: animate4 infinite 3s;
+}
+@keyframes animate4{
+  0%{
+    content: 'over';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'over';
+  }
+}
+
+span20:before{
+  content: '';
+  animation: animate20 infinite 1s;
+}
+@keyframes animate20{
+  0%{
+    content: ':)';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: ':)';
+  }
+}
+
+span9:before{
+  content: '';
+  animation: animate5 infinite 2s;
+}
+@keyframes animate5{
+  0%{
+    content: 'Santander';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  100%{
+    content: 'Santander';
+    font-style: italic;
+  }
+}
+
+span16:before{
+  content: '';
+  animation: animate6 infinite 1s;
+}
+@keyframes animate6{
+  0%{
+    content: 'do';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'do';
+  }
+}
+
+span17:before{
+  content: '';
+  animation: animate7 infinite 2s;
+}
+@keyframes animate7{
+  0%{
+    content: 'live';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'live';
+  }
+}
+
+span3:before{
+  content: '';
+  animation: animate3 infinite 4s;
+}
+@keyframes animate3{
+  0%{
+    content: 'window';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'window';
+  }
+}
+
+span4:before{
+  content: '';
+  animation: color-change 1s infinite;
+}
+@keyframes color-change{
+  0%{
+    content: '╫▐▌▓';
+    color: #cddadd;
+  }
+  100%{
+    content: '╫▐▌▓';
+    color: yellow;
+  }
+}
+
+span5:before{
+  content: '';
+  animation: color-change2 1s infinite;
+}
+@keyframes color-change2{
+  0%{
+    content: '▄';
+    color: #cddadd;
+  }
+  100%{
+    content: '▄';
+    color: yellow;
+  }
+}
+
+span6:before{
+  content: '';
+  animation: color-change3 1s infinite;
+}
+@keyframes color-change3{
+  0%{
+    content: '╫▐▌▓';
+    color: #cddadd;
+  }
+  100%{
+    content: '╫▐▌▓';
+    color: yellow;
+  }
+}
+
+span7:before{
+  content: '';
+  animation: color-change4 1s infinite;
+}
+@keyframes color-change4{
+  0%{
+    content: '▓▐▌▀';
+    color: #cddadd;
+  }
+  100%{
+    content: '▓▐▌▀';
+    color: yellow;
+  }
+}
+
+span10:before{
+  content: '';
+  animation: color-change5 3s infinite;
+}
+@keyframes color-change5{
+  0%{
+    content: '▄▄';
+    color: #cddadd;
+  }
+  100%{
+    content: '▄▄';
+    color: yellow;
+  }
+}
+
+span11:before{
+  content: '';
+  animation: color-change6 3s infinite;
+}
+@keyframes color-change6{
+  0%{
+    content: '▓▓';
+    color: #cddadd;
+  }
+  100%{
+    content: '▓▓';
+    color: yellow;
+  }
+}
+
+span12:before{
+  content: '';
+  animation: color-change7 2s infinite;
+}
+@keyframes color-change7{
+  0%{
+    content: '▒';
+    color: #cddadd;
+  }
+  100%{
+    content: '▒';
+    color: yellow;
+  }
+}
+
+span13:before{
+  content: '';
+  animation: color-change8 2s infinite;
+}
+@keyframes color-change8{
+  0%{
+    content: '▓';
+    color: #cddadd;
+  }
+  100%{
+    content: '▓';
+    color: yellow;
+  }
+}
+
+
+span15:before{
+  content: '';
+  animation: color-change10 4s infinite;
+}
+@keyframes color-change10{
+  0%{
+    content: '▓';
+    color: yellow;
+  }
+  100%{
+    content: '▓';
+    color: #cddadd;
+  }
+}
+
+span14:before{
+  content: '';
+  animation: color-change9 4s infinite;
+}
+@keyframes color-change9{
+  0%{
+    content: '▓';
+    color: yellow;
+  }
+  100%{
+    content: '▓';
+    color: #cddadd;
+  }
+}
