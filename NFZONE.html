@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DRUMWEBSITE</title>
+	<link rel="stylesheet" href="https://use.typekit.net/hou5gfo.css">
+	<link rel="stylesheet" href="ZONE.css">
+	<link rel="icon"
+				type="image/jpg"
+				href="https://i.imgur.com/3h84ZkQ.png">
+
+</head>
+<body>
+	<div class="container">
+
+<!-- I'm referring to my sets of animations for now as set "menu_icon" and set "menu_icon2" -->
+
+		<div id="menu_icon"></div>
+		<div id="menu_icon2"></div>
+		<div id="menu_icon3"></div>
+		<div id="menu_icon4"></div>
+		<div id="menu_icon5"></div>
+		<div id="menu_icon6"></div>
+		<div id="menu_icon7"></div>
+		<div id="menu_icon8"></div>
+		<div id="menu_icon9"></div>
+		<div id="menu_icon10"></div>
+
+		<div class="topleft">Marcus Soltzberg</div>
+		<div class="topright">Apr 7, 2021</div>
+		<div class="bottomleft">Zone</div>
+		<div class="bottomright">Newly Formed</div>
+
+	</div>
+
+<!-- In this next line I'm importing the Lottie script so that it can actually play my animation -->
+
+<script src="lottie.js"></script>
+
+	<script>
+
+// Loading 'menu_icon' animations using variable 'animation1'
+
+		var animation1 = bodymovin.loadAnimation({
+				container: document.getElementById('menu_icon'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: false,
+				path: 'XX0.json'
+		});
+
+		animation1.setSpeed(2);
+
+	var bol = false;
+
+		var animation2 = bodymovin.loadAnimation({
+				container: document.getElementById('menu_icon2'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: false,
+				path: 'XX2.json'
+		});
+
+		animation2.setSpeed(2);
+
+	var bol = false;
+
+		var animation3 = bodymovin.loadAnimation({
+				container: document.getElementById('menu_icon3'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: false,
+				path: 'XX3.json'
+		});
+
+		animation3.setSpeed(2);
+
+	var bol = false;
+
+					var animation4 = bodymovin.loadAnimation({
+							container: document.getElementById('menu_icon4'),
+							renderer: 'svg',
+							loop: false,
+							autoplay: false,
+							path: 'XX4.json'
+					});
+
+					animation4.setSpeed(2);
+
+				var bol = false;
+
+						var animation5 = bodymovin.loadAnimation({
+								container: document.getElementById('menu_icon5'),
+								renderer: 'svg',
+								loop: false,
+								autoplay: false,
+								path: 'XX5.json'
+						});
+
+						animation5.setSpeed(2);
+
+					var bol = false;
+
+					var animation6 = bodymovin.loadAnimation({
+							container: document.getElementById('menu_icon6'),
+							renderer: 'svg',
+							loop: false,
+							autoplay: false,
+							path: 'XX6.json'
+					});
+
+					animation6.setSpeed(2);
+
+				var bol = false;
+
+				var animation7 = bodymovin.loadAnimation({
+						container: document.getElementById('menu_icon7'),
+						renderer: 'svg',
+						loop: false,
+						autoplay: false,
+						path: 'XX7.json'
+				});
+
+				animation7.setSpeed(2);
+
+			var bol = false;
+
+			var animation8 = bodymovin.loadAnimation({
+					container: document.getElementById('menu_icon8'),
+					renderer: 'svg',
+					loop: false,
+					autoplay: false,
+					path: 'XX8.json'
+			});
+
+			animation8.setSpeed(2);
+
+		var bol = false;
+
+		var animation9 = bodymovin.loadAnimation({
+				container: document.getElementById('menu_icon9'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: false,
+				path: 'XX9.json'
+		});
+
+		animation9.setSpeed(2);
+
+	var bol = false;
+
+	var animation10 = bodymovin.loadAnimation({
+			container: document.getElementById('menu_icon10'),
+			renderer: 'svg',
+			loop: false,
+			autoplay: false,
+			path: 'XX10.json'
+	});
+
+	animation10.setSpeed(2.5);
+
+var bol = false;
+
+		// Keypress value reference sheet: https://www.w3.org/2002/09/tests/keys.html
+		window.onload = function(e) {
+			document.addEventListener("keypress", function(event) {
+			if (event.keyCode == 119) { // w
+				if (bol==false){
+					animation2.playSegments([0,25],true);
+					animation2.play();
+					changeBGC1();
+				}
+			}
+			// <>< PUT ADDITIONAL KEYS DOWN HERE. EVERYTHING NEEDS TO BE DONE IN THE SAME WINDOW.ONLOAD function - you can't have multiple of them
+			if (event.keyCode == 113) { // q
+				if (bol==false){
+					animation1.playSegments([0,21],true);
+					animation1.play();
+					changeBGC2();
+				}
+		}
+			if (event.keyCode == 101) { // e
+				if (bol==false){
+					animation3.playSegments([0,21],true);
+					animation3.play();
+					changeBGC3();
+				}
+		}
+			if (event.keyCode == 114) { // r
+				if (bol==false){
+					animation4.playSegments([0,21],true);
+					animation4.play();
+					changeBGC4();
+				}
+		}
+			if (event.keyCode == 116) { // t
+				if (bol==false){
+					animation5.playSegments([0,21],true);
+					animation5.play();
+					changeBGC5();
+				}
+		}
+
+			if (event.keyCode == 121) { // y
+				if (bol==false){
+					animation6.playSegments([0,25],true);
+					animation6.play();
+					changeBGC6();
+				}
+		}
+			if (event.keyCode == 117) { // u
+				if (bol==false){
+					animation7.playSegments([0,25],true);
+					animation7.play();
+					changeBGC7();
+				}
+		}
+			if (event.keyCode == 105) { // i
+				if (bol==false){
+					animation8.playSegments([0,25],true);
+					animation8.play();
+					changeBGC8();
+				}
+		}
+			if (event.keyCode == 111) { // o
+				if (bol==false){
+					animation9.playSegments([0,25],true);
+					animation9.play();
+					changeBGC9();
+				}
+		}
+			if (event.keyCode == 112) { // p
+				if (bol==false){
+					animation10.playSegments([0,30],true);
+					animation10.play();
+					changeBGC10();
+				}
+		}
+		});
+	};
+
+
+	</script>
+
+	<div id="drumkit" class="drumkit"></div>
+
+	<script type="text/javascript">
+
+		var data = {
+			'Q': { name: 'Freeze LaudioTest-5', sound: 'Freeze LaudioTest-5.wav' },
+			'W': { name: 'Freeze LaudioTest-6', sound: 'Freeze LaudioTest-6.wav' },
+			'E': { name: 'Freeze LaudioTest-7', sound: 'Freeze LaudioTest-7.wav' },
+			'R': { name: 'Freeze LaudioTest-8', sound: 'Freeze LaudioTest-8.wav' },
+			'T': { name: 'Freeze LaudioTest-9', sound: 'Freeze LaudioTest-9.wav' },
+			'Y': { name: 'Freeze LaudioTest-10', sound: 'Freeze LaudioTest-10.wav' },
+			'U': { name: 'Freeze LaudioTest-11', sound: 'Freeze LaudioTest-11.wav' },
+			'I': { name: 'Freeze LaudioTest-12', sound: 'Freeze LaudioTest-12.wav' },
+			'O': { name: 'Freeze LaudioTest-13', sound: 'Freeze LaudioTest-13.wav' },
+			'P': { name: 'Freeze LaudioTest-14', sound: 'Freeze LaudioTest-14.wav' },
+			'G': { name: 'AA', sound: 'AA.wav' },
+			'H': { name: 'DD', sound: 'DD.wav' },
+		};
+
+		var drumkit = document.getElementById('drumkit');
+
+		function construct() {
+			for(var key in data) {
+				var drumEl = document.createElement('div');
+				drumEl.classList.add('drum');
+
+				var h2 = document.createElement('h2');
+				h2.textContent = key;
+
+				var span = document.createElement('span');
+				span.textContent = data[key].name;
+
+				drumEl.appendChild(h2);
+				drumEl.appendChild(span);
+				drumkit.appendChild(drumEl);
+
+				data[key].el = drumEl;
+
+				drumEl.addEventListener('click', function(event) {
+					var key = event.currentTarget.querySelector('h2').textContent;
+					playDrum(key);
+				});
+			}
+		};
+
+		function playDrum(key) {
+			var audio = new Audio();
+			audio.src = data[key].sound;
+			audio.play();
+		};
+
+		function handleKeyEvents(event) {
+			playDrum(event.key.toUpperCase());
+		}
+
+		window.addEventListener('keydown', handleKeyEvents);
+
+	</script>
+
+<!-- I think you can ignore this other script that I'm still working on, it just changes the background color when you hit spacebar -->
+
+</body>
+</html>
