@@ -16,7 +16,7 @@
 
 <script>
 function mySounds() {
-  var x = Math.floor((Math.random() * 4) + 1);
+  var x = Math.floor((Math.random() * 3) + 1);
     var sound = new Audio();
   switch (x) {
     case 1:
@@ -28,15 +28,32 @@ function mySounds() {
     case 3:
          sound.src = "ah3.wav";
          break;
-    case 4:
-         sound.src = "ah4.wav";
-         break;
   }
     sound.play();
 }
 
 document.getElementById('soundbutton').addEventListener('click', mySounds);
 </script>
+
+<audio id="myAudio">
+  <source src="stupidsong.wav" type="audio/wav">
+</audio>
+
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button>
+
+<script>
+var x = document.getElementById("myAudio");
+
+function playAudio() {
+  x.play();
+}
+
+function pauseAudio() {
+  x.pause();
+}
+</script>
+
 
 </body>
 </html>
