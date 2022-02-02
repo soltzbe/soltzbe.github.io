@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>😳</title>
+	<link rel="stylesheet" href="https://use.typekit.net/hou5gfo.css">
+	<link rel="stylesheet" href="ah3.css"
+
+</head>
+
+<body>
+
+<div class="center">
+  <a class="button" id="soundbutton">😳</a>
+</div>
+
+<script>
+function mySounds() {
+  var x = Math.floor((Math.random() * 4) + 1);
+    var sound = new Audio();
+  switch (x) {
+    case 1:
+         sound.src = "ah1.wav";
+         break;
+    case 2:
+         sound.src = "ah2.wav";
+         break;
+    case 3:
+         sound.src = "ah3.wav";
+         break;
+    case 4:
+         sound.src = "ah4.wav";
+         break;
+  }
+    sound.play();
+}
+
+document.getElementById('soundbutton').addEventListener('click', mySounds);
+</script>
+
+</body>
+</html>
