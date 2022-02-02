@@ -1,0 +1,22 @@
+body {
+  background: #FF0000;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 60em;
+  letter-spacing: -4px;
+  line-height: 0.80;
+}
+
+.button {
+  margin-top: 120px;
+	width: 100%;
+	text-align: center;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
