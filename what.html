@@ -35,24 +35,9 @@ function mySounds() {
 document.getElementById('soundbutton').addEventListener('click', mySounds);
 </script>
 
-<audio id="myAudio">
-  <source src="stupidsong.wav" type="audio/wav">
+<audio autoplay>
+  <source src="stupidsong.wav" type="audio/mpeg">
 </audio>
-
-<button onclick="playAudio()" type="button">Play Audio</button>
-<button onclick="pauseAudio()" type="button">Pause Audio</button>
-
-<script>
-var x = document.getElementById("myAudio");
-
-function playAudio() {
-  x.play();
-}
-
-function pauseAudio() {
-  x.pause();
-}
-</script>
 
 
 </body>
