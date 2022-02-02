@@ -35,15 +35,16 @@ function mySounds() {
 document.getElementById('soundbutton').addEventListener('click', mySounds);
 </script>
 
-<audio autoplay>
-  <source src="stupidsong.wav" type="audio/mpeg">
-</audio>
-
 	<div class="container">
   <div class="btn-holder">
-    <button type="button1">Click</button>
+    <button id="button1" onclick="audio.play();">Click</button>
   </div>
 </div>
-
+	
+<script>
+	const audio = new Audio();
+	audio.src = "./stupidsong.wav";
+</script>
+	
 </body>
 </html>
