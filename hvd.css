@@ -1,0 +1,650 @@
+body {
+  background: #000000;
+  color: #cddadd;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 5em;
+  letter-spacing: -4px;
+  line-height: 0.80;
+  text-align: justify;
+}
+
+h1 {
+  font-family: "nimbus-sans", sans-serif;
+}
+
+.container0 {
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 50px;
+  max-width: 1000px;
+  text-align: center;
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  }
+
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+
+.container3 {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1000px;
+}
+
+.container2 {
+   text-align: center;
+   animation: fadeIn ease 3s;
+   -webkit-animation: fadeIn ease 3s;
+ }
+
+.container2 pre {
+  display: inline-block;
+  font-size: 1.4vw;
+  text-align: justify;
+ }
+
+ .container5 {
+    text-align: center;
+  }
+
+ .container5 pre {
+   display: inline-block;
+   font-size: 1.4vw;
+   text-align: justify;
+  }
+
+.ascii0 {
+  text-align: justify;
+  font-size: 1vw;
+}
+
+.ascii3 {
+  text-align: center;
+}
+
+.ascii3 pre {
+  display: inline-block;
+  text-align: justify;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 5vw;
+  letter-spacing: -4px;
+  line-height: 0.80;
+}
+
+.ascii1 {
+  text-align: center;
+}
+
+.ascii1 pre {
+  display: inline-block;
+  font-size: 3vw;
+  text-align: justify;
+}
+
+.ascii2 {
+  text-align: center;
+  font-size: 1vw;
+}
+
+.ascii {
+  text-align: center;
+  font-size: 5vw;
+  word-wrap: break-word;
+}
+
+.ascii-art {
+    font-family: source-code-pro,monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: .3em;
+    letter-spacing: -4px;
+    line-height: 0.80;
+    white-space: pre;
+    margin: 0 auto;
+}
+
+span0:before{
+  content: '';
+  animation: animate infinite 1s;
+}
+@keyframes animate{
+  0%{
+    content: 'Olivia';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'Olivia';
+  }
+}
+
+span1:before{
+  content: '';
+  animation: animate1 infinite 2s;
+}
+@keyframes animate1{
+  0%{
+    content: 'digital';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'digital';
+  }
+}
+
+span2:before{
+  content: '';
+  animation: animate2 infinite 3s;
+}
+@keyframes animate2{
+  0%{
+    content: 'with';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'with';
+  }
+}
+
+span8:before{
+  content: '';
+  animation: animate4 infinite 3s;
+}
+@keyframes animate4{
+  0%{
+    content: 'over';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'over';
+  }
+}
+
+span20:before{
+  content: '';
+  animation: animate20 infinite 1s;
+}
+@keyframes animate20{
+  0%{
+    content: ':)';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: ':)';
+  }
+}
+
+span9:before{
+  content: '';
+  animation: animate5 infinite 2s;
+}
+@keyframes animate5{
+  0%{
+    content: 'Santander';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  100%{
+    content: 'Santander';
+    font-style: italic;
+  }
+}
+
+span16:before{
+  content: '';
+  animation: animate6 infinite 1s;
+}
+@keyframes animate6{
+  0%{
+    content: 'do';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'do';
+  }
+}
+
+span17:before{
+  content: '';
+  animation: animate7 infinite 2s;
+}
+@keyframes animate7{
+  0%{
+    content: 'live';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'live';
+  }
+}
+
+span3:before{
+  content: '';
+  animation: animate3 infinite 2s;
+}
+@keyframes animate3{
+  0%{
+    content: 'gorgeous';
+    color:#E12F2F;
+  }
+  10%{
+    content: ':^)';
+    color:#E1862F;
+  }
+  20%{
+    content: 'the Lungest';
+    color:#E1D02F;
+  }
+  30%{
+    content: 'so freaking cute';
+    color:#7FE12F;
+  }
+  40%{
+    content: 'sexy';
+    color:#2FE1C7;
+  }
+  50%{
+    content: 'a girl in the world';
+    color:#2FBAE1;
+  }
+  60%{
+    content: 'stinky';
+    color:#2F86E1;
+  }
+  70%{
+    content: 'beautiful';
+    color:#452FE1;
+  }
+  80%{
+    content: 'the best';
+    color:#A22FE1;
+  }
+  90%{
+    content: 'really hot';
+    color:#E12FD6;
+  }
+  100%{
+    content: 'perfect';
+    color:#E12F70;
+  }
+}
+
+span04:before{
+  content: '';
+  animation: animate0011 infinite 1s;
+}
+@keyframes animate0011{
+  0%{
+    content: 'Met';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'Met';
+  }
+}
+
+span06:before{
+  content: '';
+  animation: animate006 infinite .5s;
+}
+@keyframes animate006{
+  0%{
+    content: 'moment';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'moment';
+  }
+}
+
+span07:before{
+  content: '';
+  animation: animate07 infinite 5s;
+}
+@keyframes animate07{
+  0%{
+    content: 'surprised';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'surprised';
+  }
+}
+
+span08:before{
+  content: '';
+  animation: animate08 infinite 4s;
+}
+@keyframes animate08{
+  0%{
+    content: 'thought';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'thought';
+  }
+}
+
+span09:before{
+  content: '';
+  animation: animate09 infinite 8s;
+}
+@keyframes animate09{
+  0%{
+    content: 'light';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'light';
+  }
+}
+
+span010:before{
+  content: '';
+  animation: animate010 infinite 2s;
+}
+@keyframes animate010{
+  0%{
+    content: 'miscellaneous';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'miscellaneous';
+  }
+}
+
+span011:before{
+  content: '';
+  animation: animate011 infinite 4.5s;
+}
+@keyframes animate011{
+  0%{
+    content: 'comforting';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'comforting';
+  }
+}
+
+span012:before{
+  content: '';
+  animation: animate012 infinite 1.5s;
+}
+@keyframes animate012{
+  0%{
+    content: 'lived';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'lived';
+  }
+}
+
+span013:before{
+  content: 'you softly sing along to music playing in the room';
+}
+
+span014:before{
+  content: 'how confident you are when you nail K-Pop dances';
+}
+
+span015:before{
+  content: 'the smiley face you use in your texts';
+}
+
+span016:before{
+  content: 'and the way your eyes light up when you smile';
+}
+
+span05:before{
+  content: '';
+  animation: animate005 infinite 3.5s;
+}
+@keyframes animate005{
+  0%{
+    content: 'think';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'think';
+  }
+}
+
+span000:before{
+  content: '';
+  animation: animate001 infinite 2.5s;
+}
+@keyframes animate001{
+  0%{
+    content: 'exactly';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'exactly';
+  }
+}
+
+span00:before{
+  content: '';
+  animation: animate000 infinite 5s;
+}
+@keyframes animate000{
+  0%{
+    content: 'writing';
+    font-family: "freight-display-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  100%{
+    content: 'writing';
+  }
+}
+
+span18:before{
+  content: '';
+  animation: color-change 2s infinite;
+  }
+  @keyframes color-change{
+  0%{
+    content: '▐▌';
+    color: #cddadd;
+  }
+  100%{
+    content: '▐▌';
+    color: yellow;
+  }
+}
+
+span5:before{
+  content: '';
+  animation: color-change2 1s infinite;
+}
+@keyframes color-change2{
+  0%{
+    content: '▄';
+    color: #cddadd;
+  }
+  100%{
+    content: '▄';
+    color: yellow;
+  }
+}
+
+span6:before{
+  content: '';
+  animation: color-change3 1s infinite;
+}
+@keyframes color-change3{
+  0%{
+    content: '╫▐▌▓';
+    color: #cddadd;
+  }
+  100%{
+    content: '╫▐▌▓';
+    color: yellow;
+  }
+}
+
+span7:before{
+  content: '';
+  animation: color-change4 1s infinite;
+}
+@keyframes color-change4{
+  0%{
+    content: '▓▐▌▀';
+    color: #cddadd;
+  }
+  100%{
+    content: '▓▐▌▀';
+    color: yellow;
+  }
+}
+
+span10:before{
+  content: '';
+  animation: color-change5 3s infinite;
+}
+@keyframes color-change5{
+  0%{
+    content: '▄▄';
+    color: #cddadd;
+  }
+  100%{
+    content: '▄▄';
+    color: yellow;
+  }
+}
+
+span11:before{
+  content: '';
+  animation: color-change6 3s infinite;
+}
+@keyframes color-change6{
+  0%{
+    content: '▓▓';
+    color: #cddadd;
+  }
+  100%{
+    content: '▓▓';
+    color: yellow;
+  }
+}
+
+span12:before{
+  content: '';
+  animation: color-change7 2s infinite;
+}
+@keyframes color-change7{
+  0%{
+    content: '▒';
+    color: #cddadd;
+  }
+  100%{
+    content: '▒';
+    color: yellow;
+  }
+}
+
+span13:before{
+  content: '';
+  animation: color-change8 2s infinite;
+}
+@keyframes color-change8{
+  0%{
+    content: '▓';
+    color: #cddadd;
+  }
+  100%{
+    content: '▓';
+    color: yellow;
+  }
+}
+
+
+span15:before{
+  content: '';
+  animation: color-change10 4s infinite;
+}
+@keyframes color-change10{
+  0%{
+    content: '▓';
+    color: yellow;
+  }
+  100%{
+    content: '▓';
+    color: #cddadd;
+  }
+}
+
+span14:before{
+  content: '';
+  animation: color-change9 4s infinite;
+}
+@keyframes color-change9{
+  0%{
+    content: '▓';
+    color: yellow;
+  }
+  100%{
+    content: '▓';
+    color: #cddadd;
+  }
+}
