@@ -148,7 +148,7 @@ h1 {
   margin-top: auto;
   width: 99%;
   height: 99%;
-  filter: blur(0px);
+  filter: blur(200px);
 }
 
 #menu_icon3{
