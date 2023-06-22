@@ -138,6 +138,13 @@ h1 {
   filter: blur(100px);
 }
 
+////
+blur = 8px
+quality = 10
+contrast = 1
+time = 3s
+////
+
 #menu_icon4{
   position: absolute;
   margin-left: auto;
@@ -145,7 +152,23 @@ h1 {
   margin-top: auto;
   width: 99%;
   height: 99%;
-  filter: blur(5px);
+  filter: blur(blur) unquote('contrast(' + (100% * contrast) + ')');
+  animation rot1 time linear infinite
+  >div
+    animation rot2 time linear infinite
+    width 3em
+    height 1.2em
+    background-color white
+@keyframes rot1
+  from
+    transform rotate(0.2turn) scaleX(1/quality)
+  to
+    transform rotate(1.2turn) scaleX(1/quality)
+@keyframes rot2
+  from
+    transform scaleX(quality) rotate(1.8turn)
+  to
+    transform scaleX(quality) rotate(0.8turn)
 }
 
 #menu_icon5{
