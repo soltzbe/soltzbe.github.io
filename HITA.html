@@ -237,11 +237,12 @@
       });
     }
 
-    function playRandomSound() {
-      var randomIndex = Math.floor(Math.random() * preloadedSounds.length);
-      var audio = preloadedSounds[randomIndex];
-      audio.play();
-    }
+function playRandomSound() {
+  var randomIndex = Math.floor(Math.random() * preloadedSounds.length);
+  var audio = new Audio();
+  audio.src = preloadedSounds[randomIndex].src;
+  audio.play();
+}
 
     var preloadedSounds;
 
