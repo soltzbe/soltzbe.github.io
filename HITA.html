@@ -190,8 +190,6 @@
 
 </script>
 
-<button onclick="playRandomSound()">Play Random Sound</button>
-
 <script type="text/javascript">
 	var soundFiles = [
 		'1.wav',
@@ -226,11 +224,13 @@
 		'30.wav',
 	];
 
-	function playRandomSound() {
-		var randomIndex = Math.floor(Math.random() * soundFiles.length);
-		var audio = new Audio(soundFiles[randomIndex]);
-		audio.play();
-	}
+    function playRandomSound() {
+      var randomIndex = Math.floor(Math.random() * soundFiles.length);
+      var audio = new Audio(soundFiles[randomIndex]);
+      audio.play();
+    }
+
+    document.addEventListener('touchstart', playRandomSound);
 </script>
 
 </head>
