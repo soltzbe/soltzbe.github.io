@@ -224,17 +224,33 @@
 		'30.wav',
 	];
 
+    function preloadAudio(url) {
+      return new Promise(function(resolve, reject) {
+        var audio = new Audio();
+        audio.src = url;
+        audio.addEventListener('canplaythrough', function() {
+          resolve(audio);
+        });
+        audio.addEventListener('error', function() {
+          reject('Error loading audio: ' + url);
+        });
+      });
+    }
+
     function playRandomSound() {
       var randomIndex = Math.floor(Math.random() * soundFiles.length);
-      var audio = new Audio(soundFiles[randomIndex]);
+      var audio = soundFiles[randomIndex];
       audio.play();
     }
 
-    document.addEventListener('touchstart', function(event) {
-      if (event.touches.length === 1) {
-        playRandomSound();
-      }
-    });
+    Promise.all(soundFiles.map(preloadAudio))
+      .then(function(audioElements) {
+        soundFiles = audioElements;
+        document.addEventListener('touchstart', playRandomSound);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
   </script>
 
 </head>
