@@ -230,8 +230,12 @@
       audio.play();
     }
 
-    document.addEventListener('touchstart', playRandomSound);
-</script>
+    document.addEventListener('touchstart', function(event) {
+      if (event.touches.length === 1) {
+        playRandomSound();
+      }
+    });
+  </script>
 
 </head>
 <body>
