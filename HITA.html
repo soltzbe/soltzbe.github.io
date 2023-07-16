@@ -238,14 +238,16 @@
     }
 
     function playRandomSound() {
-      var randomIndex = Math.floor(Math.random() * soundFiles.length);
-      var audio = soundFiles[randomIndex];
+      var randomIndex = Math.floor(Math.random() * preloadedSounds.length);
+      var audio = preloadedSounds[randomIndex];
       audio.play();
     }
 
+    var preloadedSounds;
+
     Promise.all(soundFiles.map(preloadAudio))
       .then(function(audioElements) {
-        soundFiles = audioElements;
+        preloadedSounds = audioElements;
         document.addEventListener('touchstart', playRandomSound);
       })
       .catch(function(error) {
