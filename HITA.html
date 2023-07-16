@@ -225,13 +225,15 @@
 	];
 
 	function playRandomSound() {
-		var randomIndex = Math.floor(Math.random() * soundFiles.length);
-		var audio = new Audio(soundFiles[randomIndex]);
-		audio.play();
-	}
+			var randomIndex = Math.floor(Math.random() * soundFiles.length);
+			var audio = new Audio(soundFiles[randomIndex]);
+			audio.play();
+		}
 
-	document.addEventListener('click', playRandomSound);
-</script>
+		document.addEventListener('click', playRandomSound);
+		document.addEventListener('touchstart', playRandomSound); // Added touchstart event
+
+	</script>
 
 </head>
 <body>
