@@ -1,0 +1,337 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Circles</title>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<link rel="stylesheet" href="teehee3.css">
+	<link rel="icon" type="image/png" href="./favicon.png">
+
+	<script type="text/paperscript" canvas="myCanvas">
+
+	// Line animation
+	var paths = []; // Array to store multiple paths
+	var animationDuration = 0.2; // Duration of the segment movement in seconds
+	var animationFrames = 30 * animationDuration; // Number of frames for the segment movement
+
+	// Array of available stroke colors
+	var strokeColors = ["#C81A32", "#C723B0", "#9FB8AE", "#2E40C7", "#C77E24"];
+
+	function onFrame(event) {
+	  for (var i = paths.length - 1; i >= 0; i--) {
+	    var path = paths[i];
+
+	    // If path has more than one segment, move the second segment towards the destination
+	    if (path.segments.length > 1) {
+	      var vector = path.destination - path.segments[1].point;
+	      path.segments[1].point += vector / animationFrames;
+	      if (vector.length < 1) {
+	        // When the second segment has reached the destination, trigger the first segment movement
+	        path.segments[0].point = path.segments[1].point; // Set the first segment's position to the second segment's position
+	        path.segments[0].zIndex = 1; // Move the first segment to be in front of the second segment
+	      }
+	    }
+
+	    // If path has two segments, move the first segment towards the second segment
+	    if (path.segments.length === 2) {
+	      var vector = path.segments[1].point - path.segments[0].point;
+	      path.segments[0].point += vector / animationFrames;
+	      if (vector.length < 1) {
+	        // When the first segment has reached the second segment's position, remove the path
+	        path.remove();
+	        paths.splice(i, 1);
+	      }
+	    }
+	  }
+	}
+
+	// Attach event listener to the document
+	document.addEventListener('keydown', function (event) {
+	  if (/^[a-zA-Z]$/.test(event.key)) {
+	    var startingPoint = Point.random() * view.size; // Generate a random starting point within the canvas size
+	    for (var i = 0; i < 10; i++) {
+	      var destination = Point.random() * view.size; // Generate a new random destination point
+	      var color = strokeColors[Math.floor(Math.random() * strokeColors.length)]; // Get a random stroke color
+
+	      // Create a new path with the random stroke color
+	      var path = new Path();
+	      path.strokeColor = color;
+	      path.strokeWidth = 15;
+	      path.strokeCap = 'round';
+	      path.add(startingPoint); // Add the first segment at the starting point
+	      path.add(startingPoint); // Add the second segment at the starting point
+	      path.destination = destination; // Store the destination point in the path object
+
+	      // Add the path to the paths array
+	      paths.push(path);
+	    }
+	  }
+	});
+
+	// Event listener for mouse click on the canvas
+	function onMouseDown(event) {
+	  if (event.point.isInside(view.bounds)) { // Check if the click is within the canvas boundaries
+	    var startingPoint = event.point; // Get the position where the user clicked
+	    for (var i = 0; i < 10; i++) {
+	      var destination = Point.random() * view.size; // Generate a new random destination point
+	      var color = strokeColors[Math.floor(Math.random() * strokeColors.length)]; // Get a random stroke color
+
+	      // Create a new path with the random stroke color
+	      var path = new Path();
+	      path.strokeColor = color;
+	      path.strokeWidth = 15;
+	      path.strokeCap = 'round';
+	      path.add(startingPoint); // Add the first segment at the clicked position
+	      path.add(startingPoint); // Add the second segment at the clicked position
+	      path.destination = destination; // Store the destination point in the path object
+
+	      // Add the path to the paths array
+	      paths.push(path);
+	    }
+	  }
+	}
+
+	// Function to handle window resize
+	function onResize(event) {
+	  // No need to update anything in this case
+	}
+
+	// Attach event listeners
+	window.addEventListener('resize', onResize);
+	document.getElementById('myCanvas').addEventListener('mousedown', onMouseDown);
+
+	</script>
+
+<div id="drumkit" class="drumkit"></div>
+
+<script type="text/javascript">
+
+	var data = {
+		'A': { name: '8', sound: '8.wav' },
+		'B': { name: '5', sound: '5.wav' },
+		'C': { name: '3', sound: '3.wav' },
+		'D': { name: '10', sound: '10.wav' },
+		'E': { name: '19', sound: '19.wav' },
+		'F': { name: '11', sound: '11.wav' },
+		'G': { name: '12', sound: '12.wav' },
+		'H': { name: '13', sound: '13.wav' },
+		'I': { name: '24', sound: '24.wav' },
+		'J': { name: '14', sound: '14.wav' },
+		'K': { name: '15', sound: '15.wav' },
+		'L': { name: '16', sound: '16.wav' },
+		'M': { name: '7', sound: '7.wav' },
+		'N': { name: '6', sound: '6.wav' },
+		'O': { name: '25', sound: '25.wav' },
+		'P': { name: '26', sound: '26.wav' },
+		'Q': { name: '17', sound: '17.wav' },
+		'R': { name: '20', sound: '20.wav' },
+		'S': { name: '9', sound: '9.wav' },
+		'T': { name: '21', sound: '21.wav' },
+		'U': { name: '23', sound: '23.wav' },
+		'V': { name: '4', sound: '4.wav' },
+		'W': { name: '18', sound: '18.wav' },
+		'X': { name: '2', sound: '2.wav' },
+		'Y': { name: '22', sound: '22.wav' },
+		'Z': { name: '1', sound: '1.wav' },
+	};
+
+	var drumkit = document.getElementById('drumkit');
+
+	function construct() {
+		for(var key in data) {
+			var drumEl = document.createElement('div');
+			drumEl.classList.add('drum');
+
+			var h2 = document.createElement('h2');
+			h2.textContent = key;
+
+			var span = document.createElement('span');
+			span.textContent = data[key].name;
+
+			drumEl.appendChild(h2);
+			drumEl.appendChild(span);
+			drumkit.appendChild(drumEl);
+
+			data[key].el = drumEl;
+
+			drumEl.addEventListener('click', function(event) {
+				var key = event.currentTarget.querySelector('h2').textContent;
+				playDrum(key);
+			});
+		}
+	};
+
+	function playDrum(key) {
+		var audio = new Audio();
+		audio.src = data[key].sound;
+		audio.play();
+	};
+
+	function handleKeyEvents(event) {
+		playDrum(event.key.toUpperCase());
+	}
+
+	window.addEventListener('keydown', handleKeyEvents);
+
+</script>
+
+<script type="text/javascript">
+	var soundFiles = [
+		{ sound: '1.wav', text: 'G#2' },
+		{ sound: '2.wav', text: 'A2' },
+		{ sound: '3.wav', text: 'A#2' },
+		{ sound: '4.wav', text: 'B2' },
+		{ sound: '5.wav', text: 'C3' },
+		{ sound: '6.wav', text: 'C#3' },
+		{ sound: '7.wav', text: 'D3' },
+		{ sound: '8.wav', text: 'D#3' },
+		{ sound: '9.wav', text: 'E3' },
+		{ sound: '10.wav', text: 'F3' },
+		{ sound: '11.wav', text: 'F#3' },
+		{ sound: '12.wav', text: 'G3' },
+		{ sound: '13.wav', text: 'G#3' },
+		{ sound: '14.wav', text: 'A3' },
+		{ sound: '15.wav', text: 'A#3' },
+		{ sound: '16.wav', text: 'B3' },
+		{ sound: '17.wav', text: 'C4' },
+		{ sound: '18.wav', text: 'C#4' },
+		{ sound: '19.wav', text: 'D4' },
+		{ sound: '20.wav', text: 'D#4' },
+		{ sound: '21.wav', text: 'E4' },
+		{ sound: '22.wav', text: 'F4' },
+		{ sound: '23.wav', text: 'F#4' },
+		{ sound: '24.wav', text: 'G4' },
+		{ sound: '25.wav', text: 'G#4' },
+		{ sound: '26.wav', text: 'A4' },
+	];
+
+	function playRandomSound() {
+	  var randomIndex = Math.floor(Math.random() * soundFiles.length);
+	  var selectedSound = soundFiles[randomIndex];
+	  var audio = new Audio(selectedSound.sound);
+	  audio.play();
+	  letterElement.textContent = selectedSound.text;
+	}
+
+		document.addEventListener('click', playRandomSound);
+		document.addEventListener('touchstart', playRandomSound); // Added touchstart event
+
+	</script>
+
+	<div id="fullscreen">
+					<div id="letter"></div>
+			</div>
+
+			<script>
+					// Select the letter element
+					const letterElement = document.getElementById('letter');
+
+					// Function to handle key presses
+					function handleKeyPress(event) {
+							// Check if the pressed key is the desired letter
+							if (event.key.toLowerCase() === 'z') { // Change to the desired letter
+									letterElement.textContent = 'G#2'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'x') { // Change to the desired letter
+									letterElement.textContent = 'A2'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'c') { // Change to the desired letter
+									letterElement.textContent = 'A#2'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'v') { // Change to the desired letter
+									letterElement.textContent = 'B2'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'b') { // Change to the desired letter
+									letterElement.textContent = 'C3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'n') { // Change to the desired letter
+									letterElement.textContent = 'C#3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'm') { // Change to the desired letter
+									letterElement.textContent = 'D3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'a') { // Change to the desired letter
+									letterElement.textContent = 'D#3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 's') { // Change to the desired letter
+									letterElement.textContent = 'E3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'd') { // Change to the desired letter
+									letterElement.textContent = 'F3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'f') { // Change to the desired letter
+									letterElement.textContent = 'F#3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'g') { // Change to the desired letter
+									letterElement.textContent = 'G3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'h') { // Change to the desired letter
+									letterElement.textContent = 'G#3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'j') { // Change to the desired letter
+									letterElement.textContent = 'A3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'k') { // Change to the desired letter
+									letterElement.textContent = 'A#3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'l') { // Change to the desired letter
+									letterElement.textContent = 'B3'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'q') { // Change to the desired letter
+									letterElement.textContent = 'C4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'w') { // Change to the desired letter
+									letterElement.textContent = 'C#4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'e') { // Change to the desired letter
+									letterElement.textContent = 'D4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'r') { // Change to the desired letter
+									letterElement.textContent = 'D#4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 't') { // Change to the desired letter
+									letterElement.textContent = 'E4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'y') { // Change to the desired letter
+									letterElement.textContent = 'F4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'u') { // Change to the desired letter
+									letterElement.textContent = 'F#4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'i') { // Change to the desired letter
+									letterElement.textContent = 'G4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'o') { // Change to the desired letter
+									letterElement.textContent = 'G#4'; // Change to the desired letter
+							}
+							if (event.key.toLowerCase() === 'p') { // Change to the desired letter
+									letterElement.textContent = 'A4'; // Change to the desired letter
+							}
+					}
+
+					// Event listener for keydown event
+					document.addEventListener('keydown', handleKeyPress);
+			</script>
+
+<div id="overlay-text">Click or start typing to dismiss</div>
+
+<script type="text/javascript">
+		// Event listener for mousedown event (mouse click) and touchstart event (touch interaction)
+		document.addEventListener('mousedown', hideOverlayText);
+		document.addEventListener('touchstart', hideOverlayText);
+
+		// Event listener for keydown event
+		document.addEventListener('keydown', hideOverlayText);
+
+		// Function to hide the overlay text
+		function hideOverlayText() {
+				var overlayText = document.getElementById('overlay-text');
+				overlayText.style.display = 'none';
+		}
+</script>
+
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
