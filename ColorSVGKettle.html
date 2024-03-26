@@ -67,24 +67,23 @@
                 svgContainer.innerHTML = originalSVGContent;
 
                 // Change the fill color of all SVG elements to the selected color
-                changeFillColor(svgContainer);
+                changeFillColor();
             };
 
             reader.readAsText(file);
         }
 
-        function changeFillColor(element) {
-            // Change fill color of supported SVG elements
-            var supportedTags = ['path', 'circle', 'rect', 'polygon', 'ellipse', 'line', 'polyline', 'text', 'tspan'];
-            if (supportedTags.includes(element.tagName.toLowerCase())) {
-                element.setAttribute('fill', selectedColor);
-            }
+        function changeFillColor() {
+            // Get the SVG content as a string
+            var modifiedSVGContent = originalSVGContent;
 
-            // Recursively traverse through child elements
-            var children = element.children;
-            for (var i = 0; i < children.length; i++) {
-                changeFillColor(children[i]);
-            }
+            // Replace all fill colors with the selected color
+            modifiedSVGContent = modifiedSVGContent.replace(/fill="([^"]*)"/g, 'fill="' + selectedColor + '"');
+            modifiedSVGContent = modifiedSVGContent.replace(/fill:([^;"]*);/g, 'fill: ' + selectedColor + ';');
+
+            // Update the container with the modified SVG content
+            var svgContainer = document.getElementById('svgContainer');
+            svgContainer.innerHTML = modifiedSVGContent;
         }
 
         function downloadModifiedSVG() {
