@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Color Changer</title>
+    <style>
+        #svgContainer {
+            width: 300px; /* Adjust the width as needed */
+            height: auto; /* Automatically adjust the height */
+            border: 1px solid black; /* Add border for visibility */
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG Color Changer</h1>
+    <input type="file" accept=".svg" id="fileInput">
+    <br><br>
+    <label for="colorSelect">Select Color:</label>
+    <select id="colorSelect">
+        <option value="1">Orange</option>
+        <option value="2">Blue</option>
+        <option value="3">Red</option>
+        <option value="4">Indigo</option>
+        <option value="5">Purple</option>
+        <option value="6">Pink</option>
+    </select>
+    <button onclick="applyColor()">Apply Color</button>
+    <br><br>
+    <div id="svgContainer"></div>
+    <br>
+    <button onclick="downloadModifiedSVG()">Download Modified SVG</button>
+
+    <script>
+        var originalSVGContent = '';
+        var selectedColor = '';
+
+        function applyColor() {
+            // Get the selected color
+            var colorSelect = document.getElementById('colorSelect');
+            var selectedValue = colorSelect.value;
+            if (selectedValue === '1') {
+                selectedColor = 'color(display-p3 1.000000 0.364706 0.000000 / 1.000000)'; // Red
+            } else if (selectedValue === '2') {
+                selectedColor = 'color(display-p3 0.000000 0.407843 1.000000 / 1.000000)'; // Blue
+            } else if (selectedValue === '3') {
+                selectedColor = 'color(display-p3 0.996078 0.286275 0.192157 / 1.000000)'; // Orange
+            } else if (selectedValue === '4') {
+                selectedColor = 'color(display-p3 0.290196 0.011765 0.717647 / 1.000000)'; // Purple
+            } else if (selectedValue === '5') {
+                selectedColor = 'color(display-p3 0.517647 0.000000 0.898039 / 1.000000)'; // Green
+            } else if (selectedValue === '6') {
+                selectedColor = 'color(display-p3 1.000000 0.000000 0.501961 / 1.000000)'; // Pink
+            }
+
+            var svgContainer = document.getElementById('svgContainer');
+
+            // Get the uploaded SVG file
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                originalSVGContent = event.target.result;
+
+                // Inject the SVG content into the container
+                svgContainer.innerHTML = originalSVGContent;
+
+                // Change the fill color of all SVG elements to the selected color
+                changeFillColor(svgContainer);
+            };
+
+            reader.readAsText(file);
+        }
+
+        function changeFillColor(element) {
+            // Change fill color of supported SVG elements
+            var supportedTags = ['path', 'circle', 'rect', 'polygon', 'ellipse', 'line', 'polyline', 'text', 'tspan'];
+            if (supportedTags.includes(element.tagName.toLowerCase())) {
+                element.setAttribute('fill', selectedColor);
+            }
+
+            // Recursively traverse through child elements
+            var children = element.children;
+            for (var i = 0; i < children.length; i++) {
+                changeFillColor(children[i]);
+            }
+        }
+
+        function downloadModifiedSVG() {
+            if (originalSVGContent) {
+                var modifiedSVGContent = svgContainer.innerHTML;
+
+                // Create a Blob containing the modified SVG content
+                var blob = new Blob([modifiedSVGContent], { type: 'image/svg+xml' });
+
+                // Create a download link for the Blob
+                var link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'modified.svg';
+                document.body.appendChild(link);
+
+                // Click the link to trigger the download
+                link.click();
+
+                // Clean up
+                document.body.removeChild(link);
+            } else {
+                console.error('No SVG content available to download.');
+            }
+        }
+    </script>
+</body>
+</html>
