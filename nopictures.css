@@ -16,21 +16,30 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  animation: scaleDownToBottomRight 3s ease-in-out forwards;
+  animation: scaleDownToLeftCorner 5s ease-in-out forwards;
 }
 
-@keyframes scaleDownToBottomRight {
+@keyframes scaleDownToLeftCorner {
   0% {
     width: 100vw;
     height: 100vh;
+    transform: scale(1);
+    top: 0;
+    left: 0;
+  }
+  40% {
+    width: 100vw; /* Keep it full screen */
+    height: 100vh; /* Keep it full screen */
+    transform: scale(1); /* Full size */
     top: 0;
     left: 0;
   }
   100% {
     width: 20vh; /* Final size */
     height: 20vh; /* Final size */
+    transform: scale(1); /* Scale remains at final size */
     top: auto;
-    bottom: 1vh; /* Position it at the bottom */
-    right: 2vh; /* Position it to the right */
+    bottom: 1vh; /* Position it at the bottom-left corner */
+    left: 2vh; /* Position it at the bottom-left corner */
   }
 }
