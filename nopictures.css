@@ -36,7 +36,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* For animation */
+    opacity: 1; /* For animation */
     transform: translateY(65vh); /* Start below position */
     animation: fadeInMoveUp 1s ease-in-out forwards;
 }
