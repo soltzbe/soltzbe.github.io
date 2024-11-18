@@ -1,0 +1,53 @@
+html, body {
+  display: flex;
+  background-color: #000;
+  width: 100%;
+  height:100%;
+  margin: auto;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 2vh; /* Adjust this value for more or less padding */
+    right: 2vh;  /* Adjust this value for more or less padding */
+}
+
+.image-container {
+    position: absolute;
+    top: 2vh; /* Adjust this value for top padding */
+    left: 2vh; /* Adjust this value for left padding */
+    display: flex; /* Use flexbox to place images next to each other */
+}
+
+.container {
+    width: 100vh; /* Set the width of the container to 100vh */
+    height: 65vh; /* Set the height of the container to 65vh */
+    overflow: hidden; /* Crop any overflow */
+    margin-right: 2vh; /* Optional: space between the images */
+}
+
+.top-left-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scale the image to cover the container */
+    object-position: top; /* Align the image to the top */
+    display: block; /* Ensure no extra space below the image */
+    opacity: 0; /* Start with the image invisible */
+    transform: translateY(65vh); /* Start with the image slightly below its final position */
+    animation: fadeInMoveUp 1s ease-in-out forwards; /* Animate the image */
+}
+
+.image1 {
+    animation-delay: 3s; /* 3 seconds delay for the first image */
+}
+
+.image2 {
+    animation-delay: 3.2s; /* 3.5 seconds delay for the second image */
+}
+
+@keyframes fadeInMoveUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
