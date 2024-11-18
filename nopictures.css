@@ -20,8 +20,8 @@ html, body {
 }
 
 .container {
-  width: 30vh; /* Increase width for larger squares */
-  height: 30vh; /* Increase height for larger squares */
+  width: 530vh; /* Increase width for larger squares */
+  height: 230vh; /* Increase height for larger squares */
   overflow: hidden;
   margin-right: 2vh;
 }
