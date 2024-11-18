@@ -8,7 +8,7 @@ html, body {
 
 .bottom-right {
     position: fixed;
-    bottom: 2vh; /* Adjust this value for more or less padding */
+    bottom: 1vh; /* Adjust this value for more or less padding */
     right: 2vh;  /* Adjust this value for more or less padding */
 }
 
@@ -38,11 +38,11 @@ html, body {
 }
 
 .image1 {
-    animation-delay: 3s; /* 3 seconds delay for the first image */
+    animation-delay: 1s; /* 1 seconds delay for the first image */
 }
 
 .image2 {
-    animation-delay: 3.2s; /* 3.5 seconds delay for the second image */
+    animation-delay: 1.2s; /* 1.5 seconds delay for the second image */
 }
 
 @keyframes fadeInMoveUp {
