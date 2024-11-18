@@ -1,53 +1,80 @@
+/* General Styles */
 html, body {
   display: flex;
   background-color: #000;
   width: 100%;
-  height:100%;
+  height: 100%;
   margin: auto;
 }
 
+/* Bottom-right animation player */
 .bottom-right {
-    position: fixed;
-    bottom: 1vh; /* Adjust this value for more or less padding */
-    right: 2vh;  /* Adjust this value for more or less padding */
+  position: fixed;
+  bottom: 1vh; /* Adjust this value for more or less padding */
+  right: 2vh;  /* Adjust this value for more or less padding */
 }
 
+/* Image container */
 .image-container {
-    position: absolute;
-    top: 2vh; /* Adjust this value for top padding */
-    left: 2vh; /* Adjust this value for left padding */
-    display: flex; /* Use flexbox to place images next to each other */
+  position: absolute;
+  top: 2vh; /* Adjust this value for top padding */
+  left: 2vh; /* Adjust this value for left padding */
+  display: flex; /* Use flexbox to place rectangles next to each other */
 }
 
+/* Containers for missing images */
 .container {
-    width: 100vh; /* Set the width of the container to 100vh */
-    height: 65vh; /* Set the height of the container to 65vh */
-    overflow: hidden; /* Crop any overflow */
-    margin-right: 2vh; /* Optional: space between the images */
+  width: 100vh; /* Set the width of the container */
+  height: 65vh; /* Set the height of the container */
+  overflow: hidden; /* Ensure no overflow */
+  margin-right: 2vh; /* Optional: space between the rectangles */
 }
 
-.top-left-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Scale the image to cover the container */
-    object-position: top; /* Align the image to the top */
-    display: block; /* Ensure no extra space below the image */
-    opacity: 0; /* Start with the image invisible */
-    transform: translateY(65vh); /* Start with the image slightly below its final position */
-    animation: fadeInMoveUp 1s ease-in-out forwards; /* Animate the image */
+/* Missing image rectangle */
+.missing-image {
+  position: relative; /* To position the "X" lines */
+  width: 100%; /* Fill the container */
+  height: 100%; /* Fill the container */
+  border: 2px solid white; /* White stroke for the rectangle */
+  background: none; /* Transparent background */
+  display: flex; /* Center lines inside */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start invisible */
+  transform: translateY(65vh); /* Start below its final position */
+  animation: fadeInMoveUp 1s ease-in-out forwards; /* Animate in */
 }
 
+/* Lines forming the "X" */
+.x-line {
+  position: absolute;
+  background-color: white;
+  height: 2px; /* Thickness of the "X" lines */
+  width: 100%; /* Extend across the rectangle */
+  transform-origin: center;
+}
+
+.x-line1 {
+  transform: rotate(45deg); /* First diagonal line of the "X" */
+}
+
+.x-line2 {
+  transform: rotate(-45deg); /* Second diagonal line of the "X" */
+}
+
+/* Animation delays for each rectangle */
 .image1 {
-    animation-delay: 1s; /* 1 seconds delay for the first image */
+  animation-delay: 1s; /* Delay for the first rectangle */
 }
 
 .image2 {
-    animation-delay: 1.2s; /* 1.5 seconds delay for the second image */
+  animation-delay: 1.2s; /* Delay for the second rectangle */
 }
 
+/* Fade-in and move-up animation */
 @keyframes fadeInMoveUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
