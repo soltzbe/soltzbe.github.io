@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ1RM5BVQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FZ1RM5BVQL');
+</script>
+    
+    <meta name="monetag" content="63959f2b7af63ae05e2ed73200f960db">
+    <meta name = "description" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>SEVENNS - DAILY TILES PUZZLE GAME!</title>
+    <link rel="stylesheet" href="Sevenns.css">
+    <link rel="icon" type="image/x-icon" href="SevennsLogo.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="Sevenns.js"></script>
+   
+  
+</head>
+
+<body>
+
+    <div id="landscapeMessage">
+        <p>Please rotate your phone back to portrait mode to continue.</p>
+    </div>
+    
+
+    <div id = "mainContainer">
+        <div id = "adBlockLeft" class = "adBlock">
+      
+        </div>
+        <div id="overlay1" class="overlay">
+            <div id = "intPanel" class="centered-panel">
+            <div class="close-icon" id="closeIconStart">X</div>
+            <h2>SEVENNS - THE GAME</h2>
+                <!-- Content of the centered panel goes here -->
+                
+                <p style= "color: darkgreen"><b>THREE</b> overlapping ellipses forming SEVEN regions.  </p>
+                
+                <div id = "introBin1" class="introBin">
+                    <canvas id="introCanvas1" width = "300px" height="190px"></canvas>
+                    <div id = "counter", class = "myCounter">0</div>
+                </div>
+
+                <p style= "color: darkgreen"><b>SEVEN</b> tiles  </p>
+                
+                <div id = "miniHolder" class="miniTileHolder"></div>
+                <p style= "color: darkgreen; overflow-wrap: break-word; word-wrap: break-all;"> Place exactly ONE tile per region so that the tiles in any ONE ellipse can be arranged 
+                    form an EIGHT-letter solution to the corresponding clue</p>
+            
+                <div id = "introBin2" class="introBin">
+                
+                    <canvas id="introCanvas2" width = "300px" height="190px"></canvas>
+                </div> 
+               
+            </div>
+        </div>
+
+        <div id="overlay2" class="overlayOut">
+            <div id = "outPanel" class="centered-panel">
+                
+                <h1>SEVENNS - THE GAME</h1>
+                <!-- Content of the centered panel goes here -->
+                
+                <div id ="horHolder" class="horizontalScoreHolder"></div>
+            
+                <div id="dailyCountdown"></div>
+                <div id =  "horizontalButtonHolder1", class = "horizontalButtonHolder">
+                    <button id="share" class="heldButton" onClick="share()">SHARE</button>
+                    <button id="practice" class="heldButton" onClick="practise()">ARCHIVES</button>
+                    <button id="stats" class="heldButton" onClick="doStats()">STATS</button>
+
+                </div>
+                <p style= "color: darkgreen; font-size: 16px; line-height: 1.5;">Or <b>SHARE</b> your score, <b>PRACTISE</b> or <b>DOWNLOAD </b> our app from these stores</p> 
+                <div id =  "horizontalButtonHolder2", class = "horizontalButtonHolder">
+                    <!-- App Store Icon as a Link -->
+
+                    <a href="https://apps.apple.com/gb/app/sevenns/id6502391025?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block;
+                    overflow: hidden; border-radius: 13px; width: 120px; height: 50px;">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1681171200"
+                    alt="Download on the App Store" style="border-radius: 13px; width: 120px; height: 50px;"></a>
+                    
+                
+                </div>                
+            </div>
+
+        </div>
+        
+        
+
+
+        <div id="overlayP" class="overlayPause">
+            <div id = "pausePanel" class="centered-panel">
+            
+
+                <div class="close-icon" id="closeIcon">X</div>
+
+                <!-- Content of the centered panel goes here -->
+                <div id = "pauseBin" class="introBin">
+                
+                    <canvas id="pauseCanvas" width = "300px" height="200px"></canvas>
+                </div>
+                <p style= "color: darkgreen; font-size: 16px; line-height: 1.5;width: 75%"><b>WHEN YOU HAVE THE TIME - CHECK OUT OUR APP!</b> </p>
+                
+                <img src = "SevennsLogo.png" alt="Get it now" style="border-radius: 13px; width: 123px; height: 123px; margin: 10px;">
+                <div id = "quoteContainer">
+                    <div id = "theQuote" class = 'quoteBox'> USER REVIEWS</div>
+                    <div id = 'quoter', class = 'quoterBox'></div>
+                </div>
+                <div id = "pauseHolder" >
+                
+
+                    <!-- App Store Icon as a Link -->
+
+                    <a href="https://apps.apple.com/gb/app/sevenns/id6502391025/?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block;
+                    overflow: hidden; border-radius: 13px; width: 150px; height: 63px;">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1681171200"
+                    alt="Download on the App Store" style="border-radius: 13px; width: 150px; height: 63px;"></a>
+                    
+                    <!-- Google Play Store Icon as a Link -->
+                    <a href= "https://play.google.com/store/apps/details?id=com.CommuterGamesLimited.sevennsTheGame&pcampaignid=web_share"
+                    style="display: inline-block;
+                    overflow: hidden; border-radius: 13px; width: 150px; height: 63px;">
+                    <img src="googlePlay.png" alt="Get it on Google Play" style="border-radius: 13px; width: 150px; height: 63px;"></a>
+    
+                </div>                
+                            
+            </div>
+
+        </div>
+        
+        <div id="overlayApp" class="overlayPause">
+            <div id = "pausePanel" class="centered-panel">
+            
+
+                <div class="close-icon" id="closeIconApp">X</div>
+
+                <!-- Content of the centered panel goes here -->
+             
+                <p style= "color: darkgreen; font-size: 16px; line-height: 1.5;width: 75%"><b>WHEN YOU HAVE THE TIME - CHECK OUT OUR APP!</b> </p>
+                
+                <img src = "SevennsLogo.png" alt="Get it now" style="border-radius: 13px; width: 200px; height: 200px; margin: 10px;">
+                <div id = "quoteContainer">
+                    <div id = "theQuoteApp" class = 'quoteBox'> USER REVIEWS</div>
+                    <div id = 'quoterApp', class = 'quoterBox'></div>
+                </div>
+                <div id = "pauseHolder" >
+                
+
+                    <!-- App Store Icon as a Link -->
+
+                    <a href="https://apps.apple.com/gb/app/sevenns/id6502391025/?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block;
+                    overflow: hidden; border-radius: 13px; width: 150px; height: 63px;">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1681171200"
+                    alt="Download on the App Store" style="border-radius: 13px; width: 150px; height: 63px;"></a>
+                    
+                    
+                    <!-- Google Play Store Icon as a Link -->
+                    <a href= "https://play.google.com/store/apps/details?id=com.CommuterGamesLimited.sevennsTheGame&pcampaignid=web_share"
+                    style="display: inline-block;
+                    overflow: hidden; border-radius: 13px; width: 150px; height: 63px;">
+                    <img src="googlePlay.png" alt="Get it on Google Play" style="border-radius: 13px; width: 150px; height: 63px;"></a>
+               
+                </div>                
+                            
+            </div>
+
+        </div>
+
+        
+        <div id="overlayStats" class="overlayPause">
+            <div id = "statsPanel" class="centered-panel">
+            
+
+                <div class="close-icon" id="closeIcon2">X</div>
+                <p style= "color: darkgreen; font-size: 16px; line-height: 1.5;width: 75%"><b>CHECK OUT YOUR STATS!</b> </p>
+                <p id = "totalPlay" style= "color: darkgreen; font-size: 16px; line-height: 1.5;width: 75%"><b>"YOU PLAYED XX GAMES"</b> </p>
+                <p id = "totalPerfect" style= "color: darkgreen; font-size: 16px; line-height: 1.5;width: 75%"><b>"YOU ACHIEVED NN PERFECT SCORES"</b> </p>
+                <p id = "totalAverage" style= "color: darkgreen; font-size: 16px; line-height: 1.5;width: 75%"><b>"YOUR OVERALL AVERAGE SCORE IS YY"</b> </p>
+                <canvas id="statsChart"></canvas>                
+            </div>
+        </div>
+        
+        <div id = "overlayScore" class = "overlayCountdown">
+            <div id = "scorePanel" class="countdown-panel">
+                <div class="close-icon" id="closeIconScore">X</div>
+                <h2>Your Score!</h2>
+                <div id="starRating"></div>
+            </div>
+
+        </div>
+
+        <div id = "overlayNoMore" class = "overlayCountdown">
+            <div id = "noMorePanel" class="countdown-panel">
+                <div class="close-icon" id="closeIconNoMore">X</div>
+                <h2>No More Puzzles Left For Today - Come Back Tomorrow!</h2>
+                <div id="starRating"></div>
+            </div>
+
+        </div>
+
+        <div id="overlayC" class="overlayCountdown">
+            <div id = "countdownPanel" class="countdown-panel">
+                
+                <!-- Content of the centered panel goes here -->
+                <p style= "color: darkgreen; font-size: 22px; line-height: 2.5;width: 75%"><b>GET READY!</b> </p>
+                <div id = "countdownBin" class="introBin">
+                
+                    <canvas id="countdownCanvas" width = "300px" height="190px"></canvas>
+                </div>
+                            
+            </div>
+
+        </div>
+        
+        
+        
+            <div id="gameContainer">
+            
+            <div id = "topHolder", class = "rowHolder">
+                    <div id = "leftContainer", class= "panel-container">
+                            
+                            <div id = "headerHolder"class ="holder">TARGET</div>
+                            <div id = "targetTime" class="holder">5</div>
+                            <div id = "footerHolder" class ="holder">MINS</div>
+
+                        </div>
+                    <div class = "header">
+                            <h1 id = "gameTitle"> SEVENNS</h1>
+                    </div>
+
+                        <div id = "rightContainer", class= "panel-container">
+                            <div id = "ratings"class ="holder">RATING</div>
+                            <div id = "difficultyPanel" class="ratingTile"></div>
+                            <div id = "dotHolder">
+                                <div id = "timeDot" class = gameDot></div>
+                                <div id = "hintDot" class = gameDot></div>
+                            </div>
+                        </div>
+
+                </div>
+
+                
+                
+                <div id="buttonHolder" class="rowHolder">
+                        <button type="button" id="PauseButton" class="scoreTile" onClick = "doToggleButton()">STATS</button>
+                        <button type="button" id="SubmitButton" class="scoreTile" onClick = "finishUp()">SUBMIT!</button>
+                        <button type="button" id="HintButton" class="scoreTile"  onClick = "doHint()">HINT</button>
+                        <button type="button" id="RerackButton" class="scoreTile" onClick = "doRerack()">RERACK</button>
+                        <button type="button" id="PractiseButton" class="scoreTile" onClick = "practise()">ARCHIVES</button>
+                </div>
+                
+
+                <div id="mainArea" class="mainHolder">
+                    
+            
+                        <div  id="mainPanel"class="categoryPanel">
+                            <div id = "canvasHolder" class= "canvasholder">
+                                <canvas id="canvas"></canvas>
+                            </div>
+                        </div>
+                    
+            
+                
+                </div>
+                <div id = "candidateHolder", class = "rowHolder">
+                    
+
+                    <div id = "candidPanel" class="candidatePanel" ondragover="onDragOver(event);" ondrop = "onDropPanel(event);">
+                        <div id = "tile1" class="candidate" draggable="true" ondragstart="onDragStart(event);" ></div>
+                        <div id = "tile2" class="candidate" draggable="true" ondragstart="onDragStart(event);" ></div>
+                        <div id = "tile3" class="candidate" draggable="true" ondragstart="onDragStart(event);" ></div>
+                        <div id = "tile4" class="candidate" draggable="true" ondragstart="onDragStart(event);" ></div>
+                        <div id = "tile5" class="candidate" draggable="true" ondragstart="onDragStart(event);" ></div>
+                        <div id = "tile6" class="candidate" draggable="true" ondragstart="onDragStart(event);" ></div>
+                        <div id = "tile7" class="candidate" draggable="true" ondragstart="onDragStart(event);" ></div>
+                    </div>
+
+
+
+                </div>
+
+                <div id = "adHolder", class = "rowHolder">
+           
+                </div>
+            
+                <div class="footer">
+                    <a href="https://sevenns-game.com/privacy-policy.html" target="_blank">PRIVACY</a>
+                    
+                    <a href="https://sevenns-game.com/numberSevenns.html" target="_blank">#SEVENNS GAME</a>
+                   <!-- <a href="https://sevenns-game.com/index.html" target="_blank">VENNSA</a>
+                    <a href="https://sevenns-game.com/index.html" target="_blank">VENNU</a>-->
+                    
+
+                </div>
+        
+            </div>
+            <div id = "adBlockRight" class = "adBlock">
+             
+                
+            </div>
+
+    </div>
+    
+</body>

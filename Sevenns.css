@@ -1,0 +1,1197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    background-color: silver;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+#mainContainer
+{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row; /* Center vertically and horizontally */
+    background-color: rgba(0, 0, 0, 0.0); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+  
+}
+
+.adBlock{
+    height: 100%;
+    width: 15%;
+    background-color: lightblue;
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .adBlock{
+        display: block; /* Display the ad columns on wider screens */
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Center vertically and horizontally */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: -100; /* Ensure the overlay is on top of other elements */
+    opacity: 0;
+}
+
+
+.overlayOut {
+    display: none;
+    position: fixed;
+    height:300px;
+    width: 200px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Center vertically and horizontally */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: -100; /* Ensure the overlay is on top of other elements */
+    opacity: 0;
+
+}
+
+.overlayCountdown{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Center vertically and horizontally */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: -100;
+    opacity: 0;
+    
+}
+
+
+.overlayPause{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Center vertically and horizontally */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: -100;
+    opacity: 0%;
+}
+
+#overlayApp{
+    
+    position: fixed;
+    z-index: 1000;
+    opacity: 100%;
+}
+
+
+
+.centered-panel {
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    height: 100%; /* 50% of the height of the overlay */
+    max-height: 100%;
+    width: 800px;
+    background-color: lightblue;
+    text-align: center; /* Center text horizontally */
+    padding: 5px; /* Example padding */
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+
+/* CSS for small screens (e.g., max-width: 768px) */
+@media (max-width: 768px) {
+    .centered-panel {
+        width: 100%; /* Set the desired width for small screens */
+        height: 100%;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .centered-panel {
+        width: 50%; 
+        height: 80%;
+    }
+}
+
+.bar-chart
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 300px;
+    height: 200px;
+    border: 1px darkgreen;
+    border-radius: 13px;
+}
+
+.bar-inner{
+    height: 40px;
+    margin: 0 5px;
+    transition: width 0.5s;
+}
+
+
+.countdown-panel {
+    display:flex;
+    position: fixed;
+    flex-direction: column;
+    height: 300px; /* 50% of the height of the overlay */
+    width: 300px;
+    background-color: lightblue;
+    text-align: center; /* Center text horizontally */
+    padding: 10px; /* Example padding */
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+
+
+
+#outPanel{
+    width: 80%; 
+    height: 80%;
+}
+
+#intro-panel {
+    background-color: lightblue;
+    width: 80%;
+    height: 80%;
+    box-sizing: border-box; /* Include padding and borders in width and height */
+    padding: 20px; /* Example padding */
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    color: darkgreen;
+    text-shadow: #ccc;
+    font-size:40px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        
+        font-size: 18px;
+    }
+}
+
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 768px) and (max-width: 991px) {
+    h1 {
+        
+        font-size: 24px;
+    }
+}
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    h1 {
+       
+        font-size: 32px;
+      
+    }
+}
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 1200px) {
+    h1 {
+       
+        font-size: 40px;
+    }
+}
+
+
+h2 {
+    color: darkgreen;
+    text-shadow: #ccc;
+    font-size:32px;
+    text-align: center;
+    max-width: 80%;
+}
+
+@media (max-width: 992px) {
+    h2 {
+        font-size: 20px; /* Set the desired width for small screens */
+    }
+}
+
+.horizontalButtonHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    height: 15%;
+    min-height: 60px;
+
+}
+
+
+.actionButton{
+
+    height: 40px;
+    width: 60px;
+    border: solid 3px darkgrey;
+    border-radius: 10px;
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color:lightgrey;
+    margin:auto;
+
+    color: darkgreen;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    text-align: center;
+    padding:10px;
+
+
+}
+
+.heldButton{
+
+    height: 40px;
+    width: 100px;
+    border: solid 3px darkgrey;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color:lightgrey;
+    margin:auto;
+
+    color: darkgreen;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    text-align: center;
+    padding:10px;
+  
+
+}
+
+
+
+
+.curvedLabel
+{
+    pointer-events: none;
+}
+
+
+.countdown {
+    width:90%;
+    height: 90%;
+}
+
+
+
+
+#gameContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    justify-content: center; /* Distribute space evenly between items */
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Center vertically and horizontally */
+    padding: 0px;
+}
+
+/* Styles for medium screens (768px to 991px wide) */
+
+@media (min-width: 992px) {
+    #gameContainer {
+        width: 70%;
+        padding: 30px;
+        padding-bottom: 0px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #gameContainer {
+        width: 60%;
+        padding: 30px;
+        padding-bottom: 0px;
+
+    }
+}
+.rowHolder{
+    height: 65px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+      
+}
+
+#header{
+    text-align: center;
+    align-items: center;
+    display:flex;
+    min-width: 100px;
+    padding: 20px;
+    margin: auto;
+}
+
+.mainHolder{
+    
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#starRating {
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+    color: darkgreen;
+}
+
+#adHolder{
+    background-color: lightblue;
+    width: 100%;
+    border: solid darkgreen;
+    border-radius: 10px;
+    border-width: 2px;
+    
+    bottom: 0;
+    left: 0;
+}
+
+.sidePanel{
+  
+    height: 100%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-top:10px; 
+    margin-bottom:10px;
+    min-height: 100%;
+    max-width: 200px;
+    padding: 10px;
+  
+}
+
+
+.categoryPanel{
+    position:relative;
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    margin: 0px;
+    border: solid 10px darkgreen;
+    background-color: lightskyblue;
+    border-radius: 10px;
+}
+
+.canvasholder{
+    position:absolute;
+    flex-direction: column;
+    justify-content: center
+}
+
+
+@media (max-width: 576px) {
+    .canvasholder  {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+
+@media (max-width: 576px) and (orientation: portrait) {
+     .canvasholder {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+/* Styles for medium screens (577px to 991px wide) */
+@media (min-width: 577px) and (max-width: 767px) {
+    .canvasholder {
+        width: 400px;
+        height: 400px;
+        
+    }
+}
+
+@media (min-width: 577px) and (max-width: 991px) and (orientation: portrait) {
+    .canvasholder {
+        width: 400px;
+        height: 400px;
+        
+    }
+}
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .canvasholder {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 1200px) {
+    .canvasholder {
+        width: 550px;
+        height: 550px;
+    }
+}
+
+#candidateHolder{
+    min-height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.candidatePanel {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-height: 60px;
+ 
+  
+
+}
+
+
+ .categoryPanel{
+    border: solid 5px darkgreen;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .candidatePanel {
+        width: 100%; /* Set the desired width for small screens */
+    
+    }
+}
+
+.candidate {
+    
+    position: relative;
+    border: solid 3px darkgrey;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    opacity: 1;
+    overflow: hidden;
+}
+
+@media (max-width: 576px) {
+   
+    .candidate {
+        height: 30px;
+        width: 40px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+    .candidate {
+        height: 37.5px;
+        width: 50px;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .candidate {
+        height: 45px;
+        width: 60px;
+        margin: 10px;
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .candidate {
+        height: 50px;
+        width: 70px;
+        margin: 10px;
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .candidate {
+        height: 50px;
+        width: 70px;
+        margin: 10px;
+        font-size: 32px;
+    }
+}
+
+.ratingTile {
+    height: 25%;
+    width: 90%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: darkgreen;
+}
+
+
+#dotHolder
+{
+    height: 15%;
+    width: 100%;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
+    
+}
+
+
+.gameDot
+{
+    height: 15px;
+    width: 30%;
+    border-radius: 50%;
+    padding: 10px;
+
+
+    background-color: darkgreen;
+}
+
+@media (max-width: 767px) {
+    .gameDot {
+        
+        height: 10px;
+        width: 10px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ratingTile {
+        
+        font-size: 20px;
+    }
+}
+
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .ratingTile {
+        
+        font-size: 24px;
+    }
+}
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .ratingTile {
+       
+        font-size: 32px;
+      
+    }
+}
+
+.holder{
+
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    color: darkgreen;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (max-width: 992px) {
+    .holder {
+        
+        font-size: 14px;
+    }
+}
+.scoreHolder{
+    width:100px;
+    height: 70%;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+   
+  
+}
+
+
+@media (max-width: 991px) {
+    .scoreHolder {
+        width: 90%; /* Set the desired width for small screens */
+    }
+}
+
+.scoreTile {
+    height: 50px;
+    width: 70px;
+    border-radius: 10px;
+
+    border: solid 3px darkgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    margin-top: 3px;
+    margin-bottom:3px;
+    background-color: whitesmoke;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+    z-index: 4;
+}
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .scoreTile {
+       
+        width: 80px;
+        height:50px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .scoreTile {
+       
+        width: 100px;
+        height:60px;
+        font-size: 16px;
+    }
+}
+#startButton {
+    position: absolute;
+    right: 0; /* Adjust the right value as needed */
+    bottom: 0;
+    
+    font-size: 14px;
+}
+
+.dropZone {
+    
+    position: relative;
+    
+    border: solid 3px darkgrey;
+    text-align: center;
+    justify-content: center;
+    background-color: RGBA(256,192,187,0.2);
+    border-radius: 10px;
+}
+
+
+
+.horizontalScoreHolder{
+    height: 60px;
+    width:300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border: solid 3px darkgreen;
+    background-color: whitesmoke;
+  
+}
+
+.horizontalScoreTile {
+    height: 48px;
+    width: 50px;
+    border: solid 3px darkgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: silver;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+
+
+#puzzleName{
+ 
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    color: darkgreen;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+   }
+
+
+.miniTileHolder {
+    height: 60px;
+    width: 95%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+    background-position: 0px, 0px;
+    background-position: left;
+  
+
+}
+
+@media (max-width: 992px) {
+    .miniTileHolder{
+        height: 32px;
+     
+    }
+
+  }
+
+
+.miniCandidate {
+    height: 30px;
+    width: 60px;
+    border: solid 3px darkgrey;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px;
+    background-color: whitesmoke;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    color: darkgreen;
+}
+
+
+@media (max-width: 992px) {
+    .miniCandidate{
+        height: 30px;
+        width: 60px;
+        font-size: 16px;
+    }
+
+  }
+
+
+
+
+  
+.ultraMiniCandidate {
+    position: relative;
+    height: 35px;
+    width: 50px;
+    border: solid 1.5px darkgrey;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+    background-color: whitesmoke;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+
+
+
+#landscapeMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    text-align: center;
+    z-index: 9999;
+}
+
+#landscapeMessage p {
+    font-size: 24px;
+    margin: 20% 0;
+}
+
+
+
+
+.numberTile {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    opacity: 0.2;
+    transition: opacity 0.3s;
+    color: black;
+    font-weight: bold;
+}
+
+
+.opaque {
+    opacity: 1;
+}
+    
+
+
+#canvas{
+    font-size: 20px;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+.panel-container {
+   
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px darkgreen;
+    border-radius: 10px;
+    background-color: whitesmoke;
+  }
+
+
+  @media (max-width: 767px) {
+    .panel-container {
+        
+        height: 60px;
+        width: 60px;
+    }
+
+  }
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .panel-container {
+        
+        width: 70px;
+        height: 60px;
+    }
+}
+
+/* Styles for medium screens (768px to 991px wide) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .panel-container {
+       
+        width: 80px;
+        height:80px;
+      
+    }
+}
+
+.holder{
+    font-size: 12px;
+}
+
+@media (min-width: 768px)  {
+    .holder {
+       
+        font-size: 18px;
+        
+    }
+}
+  .countdown-timer {
+    text-align: center;
+    position: relative;
+  }
+  
+
+  #timer-circle {
+    fill: transparent;
+    stroke: darkgreen; /* Change the color of the timer circle */
+    stroke-width: 8;
+    stroke-dasharray: 220; /* 2 * pi * r (circumference of a circle with r=45) */
+    stroke-dashoffset: 0;
+    animation: countdown 35s  forwards paused;
+   
+  }
+  
+  .countdown-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  @keyframes countdown {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: -220; /* Set this to 0 to have a full countdown */
+    }
+  }
+
+
+  #pauseHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    width: 100%;
+    height: 20%;
+    min-height: 100px;
+
+}
+  
+#quoteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+  .quoteBox{
+    position: relative;
+    max-width: 400px;
+    height: 20px;
+    font-size: 18px;
+    margin: 10px;
+    color: darkgreen;
+    font-weight: bold;
+  }
+  
+  .quoterBox{
+    position:relative;
+    width: 170px;
+    height: 20px;
+   font-size: 12px;
+   color: darkgreen;
+
+  }
+  
+
+ .introBin
+ {
+     
+    position: relative;
+    margin: 5px;
+    height: 190px;
+    width: 300px;
+
+ }
+
+ #introBin2
+ {
+    height: 200px;
+ }
+  
+/* CSS to style the countdown div */
+#dailyCountdown {
+    font-size: 16px;
+    color: darkgreen;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  coloredBlock {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+}
+
+.silver {
+    background-color: silver;
+    color: black;
+}
+
+.grey {
+    background-color: grey;
+    color: black;
+}
+
+.green {
+    background-color: green;
+    color: white;
+}
+ 
+.close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 22px;
+    color: darkgreen;
+    
+}
+
+.close-icon:hover {
+    color: #f00; /* Change color on hover */
+}
+
+.content {
+    padding: 10px;
+}
+
+
+.footer {
+    
+    width: 100%;
+    color: #fff; /* Change the text color to ensure visibility */
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.footer a {
+    color: #fff; /* Change the link color to your preference */
+    text-decoration: none;
+    
+}
+.footer a:hover{
+    color: navy;
+}
+#targetTime
+{
+    font-size: 22px;
+}
+
+.myCounter
+{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: dimgrey;
+    opacity: 0.6;
+
+}
